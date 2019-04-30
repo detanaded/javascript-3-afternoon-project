@@ -179,7 +179,14 @@ for (var key in deleteTheBigNumbers){
 */
 
 //Code Here
-
+function startsWithK(obj){
+  for (let key in obj){
+    if (key.startsWith('k')){
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -195,4 +202,18 @@ for (var key in deleteTheBigNumbers){
 
 //Code Here
 
+function hiddenTreasure(obj){
+  for (let key in obj){
+    if(obj[key].includes('treasure')===false){
+      delete obj[key]
+    }
+  }
+  console.log(obj)
+  return obj
+}
 
+let treasure = {
+  one: 'I love treasure',
+  two: 'pizza is great'
+}
+hiddenTreasure(treasure)
